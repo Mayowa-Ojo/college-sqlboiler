@@ -1,0 +1,5 @@
+[psql]
+dbname = "college"
+user   = "postgres"
+pass   = "adebayor"
+host   = "localhost"
