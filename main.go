@@ -19,6 +19,7 @@ func main() {
 		handleErr(err)
 	}
 
+	// register the hook
 	models.AddDepartmentHook(boil.AfterUpdateHook, hook)
 
 	fmt.Println("[INFO]: connected to database")
@@ -45,6 +46,7 @@ func handleErr(err error) {
 	log.Fatalf("[SQLBoiler]: %s", err)
 }
 
+// defining a hook [update]
 // 3rd parameter gives us direct access to the model
 func hook(ctx context.Context, exec boil.ContextExecutor, d *models.Department) error {
 	d.Code = "COD"
